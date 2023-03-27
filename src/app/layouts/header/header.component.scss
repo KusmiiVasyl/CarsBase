@@ -1,0 +1,13 @@
+.logo {
+  height: 58px;
+  margin-right: 20px;
+  border-radius: 10px;
+
+  img {
+    height: inherit;
+  }
+}
+
+.logo:hover {
+  background-color: #424242;
+}
