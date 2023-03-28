@@ -1,0 +1,46 @@
+.container-add{
+  display: flex;
+  justify-content: space-between;
+  margin: 3px 50px 3px 3px;
+
+  p {
+    font-size: 30px;
+    font-weight: bold;
+    font-style: italic;
+    align-self: self-end;
+    padding-bottom: 5px;
+  }
+
+  .icon-add, p {
+    color: #09e59e;
+  }
+}
+
+
+.table-container {
+  height: 75vh;
+  overflow: auto;
+  border-radius: 15px;
+
+  th{
+    color: #00e699;
+    background-color: #032c21;
+    align-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+
+  .icon-edit {
+    color: #b3b300;
+  }
+
+  .icon-delete{
+    color:#b30000;
+  }
+
+  .icon-info {
+    color: #317eee;
+  }
+
+}
