@@ -11,6 +11,7 @@ import {CarHttpService} from "../../../api/services/car-http.service";
 export class CarListComponent implements OnInit {
   readonly displayedColumns: string[] = ['id', 'manufacturer', 'model', 'type','color','year', 'action'];
   cars: Car[] = [];
+  errorMessage = '';
 
   constructor(private carHttpService: CarHttpService) {
   }
@@ -22,7 +23,7 @@ export class CarListComponent implements OnInit {
   getCars() {
     this.carHttpService.getAll().subscribe({
       next: cars => this.cars = cars,
-      error: error => console.error(error) //TODO Open error page
+      error: error => this.errorMessage = error.name
     });
   }
 

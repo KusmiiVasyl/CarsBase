@@ -44,3 +44,44 @@
   }
 
 }
+
+.container-loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .loading-text {
+    color:#09e59e;
+    margin: 40px auto;
+    font-size: 20px;
+    font-style: italic;
+  }
+}
+
+.container-error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  height: 30vh;
+  background-color: #1f1313;
+  margin: 50px auto;
+  border: 2px solid darkred;
+  border-radius: 15px;
+
+  .error-icon {
+    margin: 20px auto;
+    color: darkgoldenrod;
+    width: 80px;
+    height: 80px;
+    font-size: 80px;
+  }
+
+  .error-text{
+    text-align: center;
+    color: #b30000;
+    font-weight: bold;
+    font-size: 18px;
+
+  }
+}

@@ -57,4 +57,12 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
+  <div class="container-loading" *ngIf="cars.length == 0 && !errorMessage">
+    <mat-progress-bar mode="indeterminate" color="accent"></mat-progress-bar>
+    <p class="loading-text">Loading...</p>
+  </div>
+  <div class="container-error" *ngIf="errorMessage">
+    <mat-icon class="error-icon">error_outline</mat-icon>
+    <p class="error-text">Error: {{errorMessage}}</p>
+  </div>
 </div>
