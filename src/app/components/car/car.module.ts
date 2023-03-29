@@ -11,6 +11,7 @@ import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatIconModule} from "@angular/material/icon";
 import {MatTooltipModule} from "@angular/material/tooltip";
 import {MatProgressBarModule} from "@angular/material/progress-bar";
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Car} from "../../../api/models/Car";
 import {CarHttpService} from "../../../api/services/car-http.service";
 
@@ -9,7 +9,7 @@ import {CarHttpService} from "../../../api/services/car-http.service";
   styleUrls: ['./car-list.component.scss']
 })
 export class CarListComponent implements OnInit {
-  readonly displayedColumns: string[] = ['id', 'manufacturer', 'model', 'type','color','year', 'action'];
+  readonly displayedColumns: string[] = ['id', 'manufacturer', 'model', 'type', 'color', 'year', 'action'];
   cars: Car[] = [];
   errorMessage = '';
 
@@ -27,4 +27,14 @@ export class CarListComponent implements OnInit {
     });
   }
 
+  delete(id: number) {
+    this.carHttpService.delete(id)
+      .subscribe({
+        next: response => {
+          console.log(response);
+          this.getCars();
+        },
+        error: error => console.log(error)
+      })
+  }
 }

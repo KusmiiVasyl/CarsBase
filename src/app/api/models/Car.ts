@@ -1,8 +1,8 @@
 export interface Car {
-  id: number;
+  id: number | undefined;
   manufacturer: string;
   model: string;
   type: string;
   color: string;
-  year: number
+  year: number | undefined;
 }

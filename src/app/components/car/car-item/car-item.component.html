@@ -1,28 +1,28 @@
-<form class="form-container" #carForm="ngForm"  (ngSubmit)="onSubmit(carForm)">
+<form class="form-container" (ngSubmit)="onSubmit()">
 
   <mat-form-field appearance="fill" color="accent" >
     <mat-label>Manufacturer</mat-label>
-    <input matInput required>
+    <input matInput name="manufacturer" [(ngModel)]="car.manufacturer" required>
   </mat-form-field>
 
   <mat-form-field appearance="fill" color="accent" >
     <mat-label>Model</mat-label>
-    <input matInput required>
+    <input matInput name="model" [(ngModel)]="car.model" required>
   </mat-form-field>
 
   <mat-form-field appearance="fill" color="accent" >
     <mat-label>Type</mat-label>
-    <input matInput required>
+    <input matInput name="type" [(ngModel)]="car.type"  required>
   </mat-form-field>
 
   <mat-form-field appearance="fill" color="accent" >
     <mat-label>Color</mat-label>
-    <input matInput required>
+    <input matInput name="color" [(ngModel)]="car.color"  required>
   </mat-form-field>
 
   <mat-form-field appearance="fill" color="accent" >
     <mat-label>Year</mat-label>
-    <input matInput required>
+    <input matInput name="year" [(ngModel)]="car.year"  required>
   </mat-form-field>
 
   <div class="submit-container">
