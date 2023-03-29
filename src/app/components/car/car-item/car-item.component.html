@@ -1,32 +1,32 @@
 <form class="form-container" (ngSubmit)="onSubmit()">
 
-  <mat-form-field appearance="fill" color="accent" >
+  <mat-form-field appearance="outline" color="accent">
     <mat-label>Manufacturer</mat-label>
     <input matInput name="manufacturer" [(ngModel)]="car.manufacturer" required>
   </mat-form-field>
 
-  <mat-form-field appearance="fill" color="accent" >
+  <mat-form-field appearance="outline" color="accent">
     <mat-label>Model</mat-label>
     <input matInput name="model" [(ngModel)]="car.model" required>
   </mat-form-field>
 
-  <mat-form-field appearance="fill" color="accent" >
+  <mat-form-field appearance="outline" color="accent">
     <mat-label>Type</mat-label>
-    <input matInput name="type" [(ngModel)]="car.type"  required>
+    <input matInput name="type" [(ngModel)]="car.type" required>
   </mat-form-field>
 
-  <mat-form-field appearance="fill" color="accent" >
+  <mat-form-field appearance="outline" color="accent">
     <mat-label>Color</mat-label>
-    <input matInput name="color" [(ngModel)]="car.color"  required>
+    <input matInput type="color" name="color" class="form-control" [(ngModel)]="car.color" required/>
   </mat-form-field>
 
-  <mat-form-field appearance="fill" color="accent" >
+  <mat-form-field appearance="outline" color="accent">
     <mat-label>Year</mat-label>
-    <input matInput name="year" [(ngModel)]="car.year"  required>
+    <input matInput type="number" placeholder="YYYY" name="year" min="1800" max="9999" maxlength="4" [(ngModel)]="car.year" required/>
   </mat-form-field>
 
   <div class="submit-container">
-    <button class="btn-submit"  mat-flat-button color="accent">
+    <button class="btn-submit" mat-flat-button color="accent">
       Submit
     </button>
   </div>

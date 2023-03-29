@@ -4,9 +4,15 @@
   justify-content: center;
   width: 50%;
   margin: 25px auto;
+
+  .form-control {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+  }
 }
 
-.submit-container{
+.submit-container {
   display: flex;
   justify-content: center;
 }

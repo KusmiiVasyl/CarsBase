@@ -2,8 +2,8 @@ import {Component} from '@angular/core';
 import {Car} from "../../../api/models/Car";
 import {ActivatedRoute} from "@angular/router";
 import {CarHttpService} from "../../../api/services/car-http.service";
-import {NgForm} from "@angular/forms";
-import {error} from "@angular/compiler-cli/src/transformers/util";
+import {MatDatepicker} from "@angular/material/datepicker";
+
 
 @Component({
   selector: 'app-car-item',
@@ -19,7 +19,6 @@ export class CarItemComponent {
     color: "",
     year: undefined
   };
-
 
   constructor(private route: ActivatedRoute, private carHttpService: CarHttpService) {
     let {id, manufacturer, model, type, color, year} = route.snapshot.params;
