@@ -1,8 +1,7 @@
 import {Component} from '@angular/core';
 import {Car} from "../../../api/models/Car";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router, Routes} from "@angular/router";
 import {CarHttpService} from "../../../api/services/car-http.service";
-import {MatDatepicker} from "@angular/material/datepicker";
 import {carTypes} from "../../../data/car-types-data";
 import {brandCars} from "../../../data/cars-data";
 
@@ -25,7 +24,9 @@ export class CarItemComponent {
   manufacturers = brandCars;
   models: any;
 
-  constructor(private route: ActivatedRoute, private carHttpService: CarHttpService) {
+  constructor(private route: ActivatedRoute,
+              private carHttpService: CarHttpService,
+              private router: Router) {
     let {id, manufacturer, model, type, color, year} = route.snapshot.params;
     if (id) {
       this.car.id = id;
@@ -41,16 +42,37 @@ export class CarItemComponent {
     if (this.car.id) {
       this.carHttpService.update(this.car)
         .subscribe({
-          next: response => console.log(response),
+          next: response => {
+            console.log(response);
+            this.clearCarFormInput();
+            this.goCarListPage();
+          },
           error: error => console.log(error)
         })
     } else {
       this.carHttpService.create(this.car)
         .subscribe({
-          next: response => console.log(response),
+          next: response => {
+            console.log(response);
+            this.clearCarFormInput();
+            this.goCarListPage();
+          },
           error: error => console.log(error)
-    })
+        })
     }
+  }
+
+  goCarListPage() {
+    this.router.navigate(['cars'])
+      .then(response => console.log(response));
+  }
+
+  clearCarFormInput() {
+    this.car.manufacturer = "";
+    this.car.model = "";
+    this.car.type = "";
+    this.car.color = "";
+    this.car.year = undefined;
   }
 
   limitInput(input: HTMLInputElement) {
@@ -58,12 +80,13 @@ export class CarItemComponent {
     if (input.value.length > input.maxLength) {
       input.value = input.value.slice(0, input.maxLength);
     }
-    console.log(this.models)
   }
 
-  selectModel(input: HTMLInputElement) {
+  selectModel() {
     this.models = undefined;
-    let modelCars = brandCars.filter(brand => this.car.manufacturer == brand.brand) ;
-    this.models = modelCars[0].models;
+    let modelCars = brandCars.filter(brand => this.car.manufacturer == brand.brand);
+    if(modelCars.length != 0) {
+      this.models = modelCars[0].models;
+    }
   }
 }

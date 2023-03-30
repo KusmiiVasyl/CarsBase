@@ -1,1 +1,27 @@
 
+.container-home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  height: 30vh;
+  margin: 50px auto;
+
+  border-radius: 15px;
+
+  .home-icon {
+    margin: 20px auto;
+    color: #09e59e;
+    width: 80px;
+    height: 80px;
+    font-size: 80px;
+  }
+
+  .error-text{
+    text-align: center;
+    color: #09e59e;
+    font-weight: bold;
+    font-size: 40px;
+
+  }
+}

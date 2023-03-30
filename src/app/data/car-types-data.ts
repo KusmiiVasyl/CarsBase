@@ -1,6 +1,12 @@
 export const carTypes = [
   'cargo',
-  'passenger',
-  'light',
+  'hatchback',
+  'crossover',
+  'convertible',
+  'sedan',
+  'sports car',
+  'coupe',
+  'minivan',
+  'pickup truck',
   'buses'
 ];
