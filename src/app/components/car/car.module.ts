@@ -5,7 +5,7 @@ import {CarListComponent} from './car-list/car-list.component';
 import {RouterModule} from "@angular/router";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatIconModule} from "@angular/material/icon";
@@ -13,6 +13,7 @@ import {MatTooltipModule} from "@angular/material/tooltip";
 import {MatProgressBarModule} from "@angular/material/progress-bar";
 import {HttpClientModule} from "@angular/common/http";
 import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
 
 
 @NgModule({
@@ -35,7 +36,9 @@ import {MatDatepickerModule} from "@angular/material/datepicker";
     MatIconModule,
     MatTooltipModule,
     MatProgressBarModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    ReactiveFormsModule,
+    MatAutocompleteModule
   ]
 })
 export class CarModule {

@@ -2,17 +2,32 @@
 
   <mat-form-field appearance="outline" color="accent">
     <mat-label>Manufacturer</mat-label>
-    <input matInput name="manufacturer" [(ngModel)]="car.manufacturer" required>
+    <input matInput name="manufacturer" [(ngModel)]="car.manufacturer" [matAutocomplete]="brandAuto" required>
+    <mat-autocomplete #brandAuto="matAutocomplete">
+      <mat-option *ngFor="let option of manufacturers" [value]="option.brand">
+        {{option.brand}}
+      </mat-option>
+    </mat-autocomplete>
   </mat-form-field>
 
-  <mat-form-field appearance="outline" color="accent">
+  <mat-form-field appearance="outline" color="accent" (focusin)="selectModel(model)">
     <mat-label>Model</mat-label>
-    <input matInput name="model" [(ngModel)]="car.model" required>
+    <input #model matInput name="model" [(ngModel)]="car.model" [matAutocomplete]="modelAuto" required>
+    <mat-autocomplete #modelAuto="matAutocomplete">
+      <mat-option *ngFor="let option of models" [value]="option.title">
+        {{option.title}}
+      </mat-option>
+    </mat-autocomplete>
   </mat-form-field>
 
   <mat-form-field appearance="outline" color="accent">
     <mat-label>Type</mat-label>
-    <input matInput name="type" [(ngModel)]="car.type" required>
+    <input matInput name="type" [(ngModel)]="car.type" [matAutocomplete]="auto" required>
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of carTypes" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
   </mat-form-field>
 
   <mat-form-field appearance="outline" color="accent">
@@ -22,7 +37,8 @@
 
   <mat-form-field appearance="outline" color="accent">
     <mat-label>Year</mat-label>
-    <input matInput type="number" placeholder="YYYY" name="year" min="1800" max="9999" maxlength="4" [(ngModel)]="car.year" required/>
+    <input matInput #year type="number" maxlength="4" min="1200" placeholder="YYYY" name="year"
+           (input)="limitInput(year)" [(ngModel)]="car.year" required/>
   </mat-form-field>
 
   <div class="submit-container">

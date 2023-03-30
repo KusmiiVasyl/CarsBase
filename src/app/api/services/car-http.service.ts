@@ -30,5 +30,4 @@ export class CarHttpService {
   delete(id: number) {
     return this.http.delete(`${this.URL}/${id}`);
   }
-
 }

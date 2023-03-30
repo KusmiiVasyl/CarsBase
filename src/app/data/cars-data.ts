@@ -1,4 +1,4 @@
-[
+export const brandCars = [
   {
     "brand": "Abarth",
     "models": [
@@ -4776,9 +4776,6 @@
         "title": "Xenon"
       }
     ]
-  },
-  {
-    "brand": "TECHART"
   },
   {
     "brand": "Tesla",
